@@ -1,0 +1,5 @@
+.header {
+  height: 5rem;
+  border-bottom: 0.1rem solid;
+  display: flex;
+}
