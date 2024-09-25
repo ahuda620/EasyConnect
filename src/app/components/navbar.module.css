@@ -1,14 +1,23 @@
-.navbar {
+.logo {
+  height: auto;
+  max-width: 13%;
+  justify-content: flex-start;
+}
+
+.main {
   list-style: none;
   display: flex;
+  padding: 0;
+  gap: 0.5rem;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .login {
   list-style: none;
-  margin-left: auto;
   display: flex;
-}
-
-.login li {
-  margin: 0.5rem;
+  padding: 0;
+  gap: 0.5rem;
+  flex-basis: 13%;
+  justify-content: flex-end;
 }
