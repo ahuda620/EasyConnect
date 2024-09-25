@@ -1,0 +1,14 @@
+.navbar {
+  list-style: none;
+  display: flex;
+}
+
+.login {
+  list-style: none;
+  margin-left: auto;
+  display: flex;
+}
+
+.login li {
+  margin: 0.5rem;
+}
