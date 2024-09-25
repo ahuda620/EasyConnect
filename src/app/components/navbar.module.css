@@ -19,5 +19,14 @@
   padding: 0;
   flex-basis: 13%;
   justify-content: flex-end;
+  align-items: center;
   gap: 2rem;
+}
+
+.login :nth-child(2) {
+  padding: 0.5rem;
+  border: 0.2rem solid black;
+  border-radius: 1.2rem;
+  background-color: black;
+  color: white;
 }
