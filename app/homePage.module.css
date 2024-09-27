@@ -4,4 +4,21 @@
   background-repeat: no-repeat;
   background-position: 50% 70%;
   background-size: 100% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroContainer {
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 5rem;
+  margin: 0;
+}
+
+.heroText {
+  font-size: 1rem;
 }
