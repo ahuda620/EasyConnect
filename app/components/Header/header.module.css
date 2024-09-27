@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 7%;
+  /* border-bottom: 0.1rem solid; */
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.container a {
+  text-decoration: none;
+  color: black;
+}
+
+.companyLogo {
+  height: auto;
+  max-width: 13%;
+  justify-content: flex-start;
+  margin-left: 1rem;
+}
+
+.centerNavLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.centerNavLinks li a:hover {
+  color: #f43f7f;
+}
+
+.rightNavLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  flex-basis: 13%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rightNavLinks li:first-child a {
+  padding: 0.5rem 1.2rem;
+  border: 0.15rem solid rgb(224, 224, 224);
+  border-radius: 1.5rem;
+}
+
+.rightNavLinks li:nth-child(2) a {
+  padding: 0.6rem 1.2rem;
+  border-radius: 1.5rem;
+  background-color: black;
+  color: white;
+  margin-right: 1rem;
+}
+
+.rightNavLinks li:first-child a:hover {
+  background: linear-gradient(to right, #ff6ec4, #f43f7f);
+  border: none;
+  color: white;
+}
+
+.rightNavLinks li:nth-child(2) a:hover {
+  background: linear-gradient(to right, #ff6ec4, #f43f7f);
+}
