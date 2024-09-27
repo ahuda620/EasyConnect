@@ -1,8 +1,8 @@
 .container {
   height: 100%;
-  background-image: url("/rootBackground.svg");
+  background-image: url("/rootBackgroundv2.svg");
   background-repeat: no-repeat;
-  background-position: 50% 70%;
+  background-position: 50% 60%;
   background-size: 100% auto;
   display: flex;
   flex-direction: column;
