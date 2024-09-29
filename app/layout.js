@@ -1,13 +1,16 @@
 import "./styles/globals.css";
 import Header from "./components/Header/header.js";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Header></Header>
-        <main>{children}</main>
-      </body>
+      <UserProvider>
+        <body>
+          <Header></Header>
+          <main>{children}</main>
+        </body>
+      </UserProvider>
     </html>
   );
 }
