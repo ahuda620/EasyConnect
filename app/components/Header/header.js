@@ -14,6 +14,9 @@ import {
 export default function Header() {
   const { user, error, isLoading } = useUser();
   // console.log(user);
+  window.addEventListener("resize", () => {
+    console.log(window.innerWidth); // Logs the viewport width every time the window is resized
+  });
 
   return (
     <header className={styles.container}>
@@ -29,7 +32,7 @@ export default function Header() {
           <li>
             <a href="../../test">Test</a>
           </li>
-          <li>
+          {/* <li>
             <a href="#">Placeholder</a>
           </li>
           <li>
@@ -37,7 +40,7 @@ export default function Header() {
           </li>
           <li>
             <a href="#">Placeholder</a>
-          </li>
+          </li> */}
         </ul>
       </div>
       {user ? (
