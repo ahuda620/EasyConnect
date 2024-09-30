@@ -3,7 +3,7 @@
   background-image: url("/rootBackgroundv2.svg");
   background-repeat: no-repeat;
   background-position: 50% 60%;
-  background-size: 100% auto;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;

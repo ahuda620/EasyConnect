@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./header.module.css";
-import Link from "next/link";
+
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,28 +17,32 @@ export default function Header() {
 
   return (
     <header className={styles.container}>
-      <img
-        src="companyLogo.png"
-        alt="Company Logo"
-        className={styles.companyLogo}
-      ></img>
-      <ul className={styles.centerNavLinks}>
-        <li>
-          <a href="../../test">Test</a>
-        </li>
-        <li>
-          <a href="#">Placeholder</a>
-        </li>
-        <li>
-          <a href="#">Placeholder</a>
-        </li>
-        <li>
-          <a href="#">Placeholder</a>
-        </li>
-      </ul>
+      <div className={styles.companyLogoContainer}>
+        <img
+          src="companyLogo.png"
+          alt="Company Logo"
+          className={styles.companyLogo}
+        ></img>
+      </div>
+      <div className={styles.centerNavLinks}>
+        <ul>
+          <li>
+            <a href="../../test">Test</a>
+          </li>
+          <li>
+            <a href="#">Placeholder</a>
+          </li>
+          <li>
+            <a href="#">Placeholder</a>
+          </li>
+          <li>
+            <a href="#">Placeholder</a>
+          </li>
+        </ul>
+      </div>
       {user ? (
-        <div className={styles.userProfileContainer}>
-          <div className={styles.userLoggedIn}>
+        <div className={styles.userLoggedIn}>
+          <div className={styles.userProfileContainer}>
             <p>Welcome, {user.given_name}!</p>
             <img src={user.picture}></img>
             <div className={styles.dropDownMenuTriangle}></div>
@@ -46,20 +50,28 @@ export default function Header() {
               <nav>
                 <ul>
                   <li>
-                    <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
-                    Profile
+                    <a href="#">
+                      <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+                      Profile
+                    </a>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faFileLines} />
-                    Applications
+                    <a href="#">
+                      <FontAwesomeIcon icon={faFileLines} />
+                      Applications
+                    </a>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faBookmark} />
-                    Saved Jobs
+                    <a href="#">
+                      <FontAwesomeIcon icon={faBookmark} />
+                      Saved Jobs
+                    </a>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faRightFromBracket} />
-                    Logout
+                    <a href="/api/auth/logout">
+                      <FontAwesomeIcon icon={faRightFromBracket} />
+                      Logout
+                    </a>
                   </li>
                 </ul>
               </nav>
@@ -67,14 +79,16 @@ export default function Header() {
           </div>
         </div>
       ) : (
-        <ul className={styles.userNotLoggedIn}>
-          <li>
-            <Link href="/api/auth/login">Login</Link>
-          </li>
-          <li>
-            <Link href="#">Sign Up</Link>
-          </li>
-        </ul>
+        <div className={styles.userNotLoggedIn}>
+          <ul>
+            <li>
+              <a href="/api/auth/login">Login</a>
+            </li>
+            <li>
+              <a href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
       )}
     </header>
   );
