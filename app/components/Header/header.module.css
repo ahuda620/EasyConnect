@@ -222,6 +222,7 @@
 
 .mobileMenu ul li svg {
   padding-right: 1rem;
+  width: 2.5rem;
 }
 
 .mobileMenu.visible {
