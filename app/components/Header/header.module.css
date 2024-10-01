@@ -1,43 +1,38 @@
-.container {
+.wrapper {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  height: 7vh;
   align-items: center;
   justify-content: space-between;
+  padding-inline: 1rem;
   font-size: 1.2rem;
-  padding: 0 1.5rem;
+  border-bottom: 0.1rem solid black;
 }
 
-.container a {
+.wrapper a {
   text-decoration: none;
   color: black;
 }
 
-.companyLogoContainer {
-  max-width: 13%;
-}
-
 .companyLogo {
-  max-width: 100%;
+  height: auto;
+  width: 100%;
+  max-width: 15rem;
+  /* width: clamp(9rem, 13%, 15rem); */
 }
 
 .centerNavLinks {
-  flex-grow: 1;
-}
-
-.centerNavLinks ul {
   list-style: none;
   display: flex;
   padding: 0;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .centerNavLinks li a:hover {
   color: #f43f7f;
 }
 
-.userLoggedIn {
+/* .userLoggedIn {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -95,23 +90,23 @@
 }
 
 /*Make anchor tag take entire width/height of li element*/
-.profileDropDownMenu li a {
+/* .profileDropDownMenu li a {
   display: block;
   width: 100%;
   height: 100%;
-}
+} */
 
-.profileDropDownMenu li:hover {
+/* .profileDropDownMenu li:hover {
   color: #f43f7f;
   border-left: 0.3rem solid #f43f7f;
-}
+} */
 
 /*Change color of anchor element text WHILE li element is hovered over */
-.profileDropDownMenu li:hover a {
+/* .profileDropDownMenu li:hover a {
   color: #f43f7f;
-}
+} */
 
-.userProfileContainer {
+/* .userProfileContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -144,20 +139,18 @@
 
 .userProfileContainer:hover .profileDropDownMenu {
   display: block;
-}
+} */
 
 .userNotLoggedIn {
-  width: 100%;
-  max-width: 13%;
-}
-
-.userNotLoggedIn ul {
-  justify-content: flex-end;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   list-style: none;
   padding: 0;
+  width: 100%;
+  max-width: 15rem;
+  /* width: clamp(9rem, 13%, 15rem); */
 }
 
 .userNotLoggedIn li a {
@@ -177,7 +170,7 @@
   color: white;
 }
 
-.userNotLoggedIn li:first-child a:hover {
+/* .userNotLoggedIn li:first-child a:hover {
   background: linear-gradient(to right, #ff6ec4, #f43f7f);
   border: none;
   color: white;
@@ -185,4 +178,65 @@
 
 .userNotLoggedIn li:nth-child(2) a:hover {
   background: linear-gradient(to right, #ff6ec4, #f43f7f);
+} */
+
+.mobileMenuToggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mobileMenuToggle svg {
+  width: 1.8rem;
+  height: auto;
+}
+
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+}
+
+.mobileMenu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  list-style: none;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileMenu ul li {
+  padding: 1rem;
+}
+
+.mobileMenu ul li a {
+  color: white;
+  font-size: 1.5rem;
+  /* margin-inline: 1rem; */
+  /* padding-inline: 1rem; */
+}
+
+.mobileMenu ul li svg {
+  padding-right: 1rem;
+}
+
+.mobileMenu.visible {
+  display: flex;
+}
+
+@media (max-width: 1092px) {
+  .centerNavLinks,
+  .userNotLoggedIn {
+    display: none;
+  }
+
+  .mobileMenuToggle {
+    display: inline-block;
+  }
 }

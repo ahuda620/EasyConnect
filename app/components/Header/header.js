@@ -1,7 +1,8 @@
 "use client";
 
 import styles from "./header.module.css";
-
+import { useState } from "react";
+import { useEffect } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,40 +10,55 @@ import {
   faFileLines,
   faBookmark,
   faRightFromBracket,
+  faMagnifyingGlass,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-  const { user, error, isLoading } = useUser();
-  // console.log(user);
-  window.addEventListener("resize", () => {
-    console.log(window.innerWidth); // Logs the viewport width every time the window is resized
-  });
+  const [isMobile, setIsMobile] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
+  // const { user, error, isLoading } = useUser();
+  const user = false;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1092);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleMenuVisible = () => {
+    setMenuVisible(!menuVisible);
+  };
 
   return (
-    <header className={styles.container}>
-      <div className={styles.companyLogoContainer}>
-        <img
-          src="companyLogo.png"
-          alt="Company Logo"
-          className={styles.companyLogo}
-        ></img>
-      </div>
-      <div className={styles.centerNavLinks}>
-        <ul>
-          <li>
-            <a href="../../test">Test</a>
-          </li>
-          {/* <li>
-            <a href="#">Placeholder</a>
-          </li>
-          <li>
-            <a href="#">Placeholder</a>
-          </li>
-          <li>
-            <a href="#">Placeholder</a>
-          </li> */}
-        </ul>
-      </div>
+    <nav className={styles.wrapper}>
+      <img
+        src="companyLogo.png"
+        alt="Company Logo"
+        className={styles.companyLogo}
+      ></img>
+
+      <ul className={styles.centerNavLinks}>
+        <li>
+          <a href="#">Placeholder</a>
+        </li>
+        <li>
+          <a href="#">Placeholder</a>
+        </li>
+        <li>
+          <a href="#">Placeholder</a>
+        </li>
+        <li>
+          <a href="#">Placeholder</a>
+        </li>
+      </ul>
+
       {user ? (
         <div className={styles.userLoggedIn}>
           <div className={styles.userProfileContainer}>
@@ -82,17 +98,61 @@ export default function Header() {
           </div>
         </div>
       ) : (
-        <div className={styles.userNotLoggedIn}>
+        <ul className={styles.userNotLoggedIn}>
+          <li>
+            <a href="/api/auth/login">Login</a>
+          </li>
+          <li>
+            <a href="#">Sign Up</a>
+          </li>
+        </ul>
+      )}
+
+      {isMobile && (
+        <button className={styles.mobileMenuToggle} onClick={handleMenuVisible}>
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+      )}
+
+      {isMobile && (
+        <nav
+          className={`${styles.mobileMenu}
+        ${menuVisible ? styles.visible : ""}`}
+        >
           <ul>
             <li>
-              <a href="/api/auth/login">Login</a>
+              <a href="#">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                Placeholder
+              </a>
             </li>
             <li>
-              <a href="#">Sign Up</a>
+              <a href="#">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                Placeholder
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                Placeholder
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                Placeholder
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                Placeholder
+              </a>
             </li>
           </ul>
-        </div>
+        </nav>
       )}
-    </header>
+    </nav>
   );
 }
