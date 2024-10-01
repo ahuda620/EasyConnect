@@ -32,17 +32,17 @@
   color: #f43f7f;
 }
 
-/* .userLoggedIn {
+.userLoggedIn {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  max-width: 13%;
+  max-width: 15rem;
   width: 100%;
 }
 
-.dropDownMenuTriangle {
+/* .dropDownMenuTriangle {
   display: none;
   position: absolute;
   width: 0;
@@ -87,7 +87,7 @@
 
 .profileDropDownMenu li:last-child svg {
   margin: 0 0.88rem;
-}
+} */
 
 /*Make anchor tag take entire width/height of li element*/
 /* .profileDropDownMenu li a {
@@ -106,10 +106,9 @@
   color: #f43f7f;
 } */
 
-/* .userProfileContainer {
-  width: 100%;
+.userProfileContainer {
+  /* width: 100%; */
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: black;
@@ -133,7 +132,7 @@
   background: linear-gradient(to right, #ff6ec4, #f43f7f);
 }
 
-.userProfileContainer:hover .dropDownMenuTriangle {
+/* .userProfileContainer:hover .dropDownMenuTriangle {
   display: block;
 }
 
@@ -150,7 +149,6 @@
   padding: 0;
   width: 100%;
   max-width: 15rem;
-  /* width: clamp(9rem, 13%, 15rem); */
 }
 
 .userNotLoggedIn li a {
@@ -170,7 +168,7 @@
   color: white;
 }
 
-/* .userNotLoggedIn li:first-child a:hover {
+.userNotLoggedIn li:first-child a:hover {
   background: linear-gradient(to right, #ff6ec4, #f43f7f);
   border: none;
   color: white;
@@ -178,7 +176,7 @@
 
 .userNotLoggedIn li:nth-child(2) a:hover {
   background: linear-gradient(to right, #ff6ec4, #f43f7f);
-} */
+}
 
 .mobileMenuToggle {
   display: none;
@@ -218,8 +216,8 @@
 .mobileMenu ul li a {
   color: white;
   font-size: 1.5rem;
-  /* margin-inline: 1rem; */
-  /* padding-inline: 1rem; */
+  display: block;
+  width: 100%;
 }
 
 .mobileMenu ul li svg {
@@ -232,7 +230,8 @@
 
 @media (max-width: 1092px) {
   .centerNavLinks,
-  .userNotLoggedIn {
+  .userNotLoggedIn,
+  .userLoggedIn {
     display: none;
   }
 
