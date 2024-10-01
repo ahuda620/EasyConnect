@@ -119,7 +119,6 @@ export default function Header() {
         >
           <ul>
             {user ? (
-              //Maybe add profile icon to the top right
               <>
                 <li>
                   <img src={user.picture}></img>
