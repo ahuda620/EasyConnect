@@ -62,7 +62,7 @@ export default function Header() {
           <div className={styles.userProfileContainer}>
             <p>Welcome, {user.given_name}!</p>
             <img src={user.picture}></img>
-            {/* <div className={styles.dropDownMenuTriangle}></div>
+            <div className={styles.dropDownMenuTriangle}></div>
             <div className={styles.profileDropDownMenu}>
               <nav>
                 <ul>
@@ -92,7 +92,7 @@ export default function Header() {
                   </li>
                 </ul>
               </nav>
-            </div> */}
+            </div>
           </div>
         </div>
       ) : (
@@ -120,12 +120,17 @@ export default function Header() {
           <ul>
             {user ? (
               //Maybe add profile icon to the top right
-              <li>
-                <a href="/api/auth/logout">
-                  <FontAwesomeIcon icon={faRightFromBracket} />
-                  Logout
-                </a>
-              </li>
+              <>
+                <li>
+                  <img src={user.picture}></img>
+                </li>
+                <li>
+                  <a href="/api/auth/logout">
+                    <FontAwesomeIcon icon={faRightFromBracket} />
+                    Logout
+                  </a>
+                </li>
+              </>
             ) : (
               <>
                 <li>
