@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
       <UserProvider>
         <body>
           <Header></Header>
-          <main>{children}</main>
+          {children}
         </body>
       </UserProvider>
     </html>
