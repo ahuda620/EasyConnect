@@ -15,7 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1092);
+  const [isMobile, setIsMobile] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
   const { user, error, isLoading } = useUser();
   //const user = false;
@@ -24,6 +24,8 @@ export default function Header() {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1092);
     };
+
+    handleMenuVisible();
 
     window.addEventListener("resize", handleResize);
 
